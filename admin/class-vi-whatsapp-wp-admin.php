@@ -96,7 +96,6 @@ class Vi_Whatsapp_Wp_Admin {
 		if (get_option('vi_whatsapp_wp_redirect_on_first_activation_option', false)) {
 			delete_option('vi_whatsapp_wp_redirect_on_first_activation_option');
 			exit( wp_safe_redirect(admin_url('admin.php?page=vi-whatsapp-wp')) );
-			echo '<div class="updated"><p>This is my notice.</p></div>';
 		}
 	}
 

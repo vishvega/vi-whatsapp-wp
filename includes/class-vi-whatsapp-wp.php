@@ -70,7 +70,7 @@ class Vi_Whatsapp_Wp {
 		if ( defined( 'VI_WHATSAPP_WP_VERSION' ) ) {
 			$this->version = VI_WHATSAPP_WP_VERSION;
 		} else {
-			$this->version = '1.0.0';
+			$this->version = '1.0.2';
 		}
 		$this->plugin_name = 'vi-whatsapp-wp';
 
