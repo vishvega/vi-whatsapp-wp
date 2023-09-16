@@ -1,0 +1,25 @@
+// If the pulse effect is enabled
+.effects_pulse {
+    a {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+        border-radius: 50px;
+        text-align: center;
+
+        // flex-direction, flex-wrap, align-content, align-items, align-self, justify-content, justify-items, justify-self
+        @include flexer(null, null, null, center null, null, center);
+
+        transform: translatey(0px);
+        // animation: wa_for_wp_vi-effects-pulsing 1.5s infinite;
+        box-shadow: 0 0 0 0 #25d366b0;
+        // -webkit-animation: wa_for_wp_vi-effects-pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+        // -moz-animation: wa_for_wp_vi-effects-pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+        // -ms-animation: wa_for_wp_vi-effects-pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+        animation: wa_for_wp_vi-effects-pulsing 1.25s infinite cubic-bezier(0.44, 0, 0, 0.44);
+        font-weight: normal;
+        font-family: sans-serif;
+        text-decoration: none !important;
+        transition: all 300ms ease-in-out;
+    }
+}

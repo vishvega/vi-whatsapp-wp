@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: (this should be a list of wordpress.org userid's)
-Donate link: https://github.com/vishvega/whatsapp-for-wordpress
+Donate link: https://github.com/vishvega/vi-whatsapp-wp
 Tags: wordpress, plugin, whatsapp, integration, chat, chat-widget, widget
 Requires at least: 3.0.1
 Tested up to: 3.4

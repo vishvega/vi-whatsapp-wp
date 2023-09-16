@@ -1,0 +1,22 @@
+// Admin settings page - main
+
+@import "scss/settingspage_main";
+@import "scss/settingspage_main_alt";
+
+
+
+pre {
+    background: rgb(65, 34, 34);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 1px solid #c9e85d;
+    border-bottom: 1px solid #c9e85d;
+    padding: 1rem 0;
+    // margin: 0 auto;
+    color: #fff;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}

@@ -1,0 +1,48 @@
+@use "sass:math";
+@function remming($value){
+    // $remValue: ($value / 16) + rem; 
+    $remValue: math.div($value, 16) + rem; 
+    @return $remValue;
+}
+
+// flex-direction, flex-wrap, align-content, align-items, align-self, justify-content, justify-items, justify-self
+@mixin flexer( $fdir : null, $wrap : null, $ali_cont : null, $ali_itm : null, $ali_self : null, $just_cont : null, $just_itm : null, $just_self : null ){
+    display: flex;
+    flex-direction: $fdir;
+    flex-wrap: $wrap;
+    align-content: $ali_cont;
+    align-items: $ali_itm;
+    align-self: $ali_self;
+    justify-content: $just_cont;
+    justify-items: $just_itm;
+    justify-self: $just_self;
+}
+
+
+// Responsive media queries
+@mixin resp_tab{
+    @media ( min-width: #{$width_tab} ){
+        @content;
+    }
+}
+@mixin resp_tab_land{
+    @media ( min-width: #{$width_tab_land} ){
+        @content;
+    }
+}
+@mixin resp_sm_desk{
+    @media ( min-width: #{$width_sm_desktop} ){
+        @content;
+    }
+}
+@mixin resp_md_desk{
+    @media ( min-width: #{$width_md_desktop} ){
+        @content;
+    }
+}
+@mixin resp_lg_desk{
+    @media ( min-width: #{$width_lg_desktop} ){
+        @content;
+    }
+}
+

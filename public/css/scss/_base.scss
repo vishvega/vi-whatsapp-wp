@@ -1,0 +1,29 @@
+.whatsapp_for_wordpress_vi-public {
+    a {
+        text-decoration: unset;
+        &:focus {
+            text-decoration: unset;
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    textarea {
+        width: 100%;
+        resize: none;
+    }
+}
+
+
+@keyframes wa_for_wp_vi-effects-pulsing {
+    to {
+        box-shadow: 0 0 0 10px rgba(232, 76, 61, 0);
+    }
+}
+
+.just_hide_this {
+    display: none;
+}

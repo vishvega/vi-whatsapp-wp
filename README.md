@@ -1,1 +1,1 @@
-# Whatsapp for WordPress
+# Whatsapp for WordPress | Whatsapp WP
