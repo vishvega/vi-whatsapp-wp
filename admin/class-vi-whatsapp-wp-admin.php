@@ -45,7 +45,7 @@ class Vi_Whatsapp_Wp_Admin {
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $version    The current version of this plugin.
+	 * @var      string    $option_name    The current version of this plugin.
 	 */
 	private $option_name = "vi_whatsapp_wp_settings";
 
@@ -54,9 +54,11 @@ class Vi_Whatsapp_Wp_Admin {
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $version    The current version of this plugin.
+	 * @var      string    $version    The text domain / slug of this plugin.
 	 */
 	private $txt_domain = "vi-whatsapp-wp";
+
+	
 
 
 
@@ -66,8 +68,9 @@ class Vi_Whatsapp_Wp_Admin {
 	 * @since    1.0.0
 	 * @param      string    $plugin_name       The name of this plugin.
 	 * @param      string    $version    The version of this plugin.
+	 * @param      string    $txt_domain    The text domain / slug of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
+	public function __construct( $plugin_name, $version, $txt_domain = null ) {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
