@@ -87,6 +87,20 @@ class Vi_Whatsapp_Wp_Admin {
 
 	}
 
+	/**
+	 * Redirect to the plugin main page upon activation.
+	 *
+	 * @since    1.0.0
+	 */
+	public function vi_whatsapp_wp_init_redirect(){
+		if (get_option('vi_whatsapp_wp_redirect_on_first_activation_option', false)) {
+			delete_option('vi_whatsapp_wp_redirect_on_first_activation_option');
+			exit( wp_safe_redirect(admin_url('admin.php?page=vi-whatsapp-wp')) );
+			echo '<div class="updated"><p>This is my notice.</p></div>';
+		}
+	}
+
+
 
 	/**
 	 * Register the stylesheets for the admin area.
