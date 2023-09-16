@@ -1,2 +1,7 @@
 - name: WordPress Plugin Build Zip
+  # You may pin to the exact commit or the version.
+  # uses: 10up/action-wordpress-plugin-build-zip@40f68667d11dc139fae944841e89d4b47b2bab44
   uses: 10up/action-wordpress-plugin-build-zip@1.0.0
+  with:
+    # How many days to keep the zip archive
+    retention-days: # optional, default is 5
