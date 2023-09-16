@@ -58,7 +58,14 @@ class Vi_Whatsapp_Wp_Admin {
 	 */
 	private $txt_domain = "vi-whatsapp-wp";
 
-	
+	/**
+	 * Slug of the plugin screen.
+	 *
+	 * @since    1.0.0
+	 *
+	 * @var      string
+	 */
+	protected $plugin_screen_hook_suffix = null;
 
 
 
