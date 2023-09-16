@@ -20,7 +20,11 @@ class Vi_Whatsapp_Wp_Activator{
 	 */
 	
 	public static function activate() {
+		// Set activator option
+		add_option('vi_whatsapp_wp_redirect_on_first_activation_option', 'true');
 
+		// Set option, not deactivated
+		// add_option('vi_whatsapp_wp_redirect_on_deactivate_option', 'true');
 	}
 
 }

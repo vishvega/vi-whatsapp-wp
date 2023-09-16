@@ -153,7 +153,11 @@ class Vi_Whatsapp_Wp {
 	private function define_admin_hooks() {
 
 		$plugin_admin = new Vi_Whatsapp_Wp_Admin( $this->get_plugin_name(), $this->get_version() );
-
+		
+		// Plugin Redirection upon activation
+		$this->loader->add_action( 'admin_init' , $plugin_admin, 'vi_whatsapp_wp_init_redirect' );
+		
+		// Admin scripts and styles
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
