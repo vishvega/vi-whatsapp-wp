@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Provide a admin area view for the plugin
+ * Provide a admin area view for the plugin : Settings page
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
@@ -12,10 +12,13 @@
  * @subpackage Vi_Whatsapp_WP/admin/partials
  */
 ?>
-<?php include_once 'vi-whatsapp-wp-admin-assets.php'; ?>
 
 
 <?php 
+
+// Admin hard  assets
+include_once 'vi-whatsapp-wp-admin-assets.php'; 
+
 // Vars
 $txt_domain = "vi-whatsapp-wp";
 ?>
