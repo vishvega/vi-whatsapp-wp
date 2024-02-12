@@ -172,16 +172,40 @@ class Vi_Whatsapp_Wp_Admin {
 			__( 'Whatsapp WP', $this->txt_domain ),
 			'manage_options',
 			$this->plugin_name,
-			array( $this, 'vi_whatsapp_wp_display_options_page' ),
+			array( $this, 'vi_whatsapp_wp_display_main_page' ),
 			'data:image/svg+xml;base64,' . base64_encode( $get_icon ),
 			96
+		);
+
+		$this->plugin_screen_hook_suffix = add_submenu_page(
+			$this->plugin_name,
+			__( 'Settings', $this->txt_domain ),
+			__( 'Settings', $this->txt_domain ),
+			'manage_options',
+			$this->plugin_name.'-settings',
+			array( $this, 'vi_whatsapp_wp_display_options_page' ),
+			null,
+			1
 		);
 	
 	}
 
 
 	/**
-	 * Render the options page for plugin
+	 * Render the Main page for plugin
+	 *
+	 * @since  1.0.0
+	 */
+	public function vi_whatsapp_wp_display_main_page() {
+		if ( !current_user_can( 'manage_options' ) ):
+			wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+		else:
+			include_once 'partials/vi-whatsapp-wp-admin-main-display.php';
+		endif;
+	}
+
+	/**
+	 * Render the Settings page for plugin
 	 *
 	 * @since  1.0.0
 	 */
@@ -312,11 +336,12 @@ class Vi_Whatsapp_Wp_Admin {
 			<select 
 				name="<?php echo $this->option_name . '_frontview' ?>" 
 				id="<?php echo $this->option_name . '_frontview' ?>"
-				class="niced wide" >
+				class="wa_for_wp_vi_settings_viewopt niced wide" >
 				
 				<?php  foreach ($view_as_options as $keyViewAs => $viewOption): ?>
 				<option 
 					value="<?php echo $keyViewAs ?>"
+					class="lol"
 					<?php echo ( (!empty( get_option( $this->option_name . '_frontview' ) ) ) && ( get_option( $this->option_name . '_frontview' ) == $keyViewAs )  ) ? "class='selected' selected='selected' " : "" ?> >
 						<?php echo $viewOption ?>
 				</option>
