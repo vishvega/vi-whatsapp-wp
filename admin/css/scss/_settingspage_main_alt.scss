@@ -7,11 +7,8 @@
   &-main {
     &-config {
       &-basic {
-
         &-head {
-          border-bottom: 1px solid #444;
           width: 100%;
-          padding: 10px 0;
           a {
             text-decoration: none;
             font-size: 18px;
@@ -22,72 +19,100 @@
             display: flex;
             position: relative;
             &::after {
-              content: "\02795";
+              content: "\002B";
               position: absolute;
               right: 0;
               top: 50%;
               transform: translateY(-50%);
             }
+            &.opened{
+              padding-bottom: 10px;
+              border-bottom: 1px solid #444;
+              &::after{
+                content: "\02212";
+              }
+            }
+
+            &:focus{
+              box-shadow: unset;
+              outline: none;
+            }
           }
         }
 
-        &-body{
+        &-body {
+          opacity: 0;
+          visibility: hidden;
+          height: 0;
+          transition: visibility 4s ease-in-out;
+          &-forminner {
             display: flex;
-            flex-direction: row;
-            gap: 40px;
-            padding: 40px 0;
-            &-form{
-                flex: 1 1 calc(60% - 40px);
-                max-width: 60%;
-                border: 1px solid #ccc;
-                border-radius: 15px;
-                padding: 0 20px;
-                input{
-                    &:not( input[type=submit]  ){
-                        height: 42px;
-                        width: 100%;
-                        border-color: #e8e8e8;
-                        border-radius: 5px;
-                        line-height: 40px;
-                        outline: 0;
-                        padding-left: 18px;
-                        padding-right: 30px;
-                        box-sizing: border-box;
-                        clear: both;
-                        &:focus{
-                            border-color: #999;
-                        }
-                    }
-                }
+          }
+          &.extended {
+            animation: settingsToggle .44s cubic-bezier(0.76, 0, 0.24, 1) 0s 1 normal none;
+            opacity: 1;
+            visibility: visible;
+            height: auto;
+            // display: flex;
+            .whatsapp_for_wordpress_vi-admin-main-config-basic-body-forminner{
+              flex-direction: row;
+              gap: 40px;
+              // display: none;
+              padding: 30px 0 40px 0;
             }
-            &-qlook{
-                flex: 1 1 calc(40% - 40px);
-                max-width: 40%;
-                border: 1px solid #ccc;
-                border-radius: 15px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                &-logo{
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    img{
-                        max-width: 100%;
-                        height: auto;
-                        width: 160px;
-                    }
+          }
+          &-form {
+            flex: 1 1 calc(60% - 40px);
+            max-width: 60%;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            padding: 0 20px;
+            input {
+              &:not(input[type="submit"]) {
+                height: 42px;
+                width: 100%;
+                border-color: #e8e8e8;
+                border-radius: 5px;
+                line-height: 40px;
+                outline: 0;
+                padding-left: 18px;
+                padding-right: 30px;
+                box-sizing: border-box;
+                clear: both;
+                &:focus {
+                  border-color: #999;
                 }
-                &-in{
-                    h2{
-                        font-size: 15px;
-                        letter-spacing: .3px;
-                        line-height: 1.5;
-                    }
-                }
+              }
             }
+          }
+          &-qlook {
+            flex: 1 1 calc(40% - 40px);
+            max-width: 40%;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            &-logo {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              img {
+                max-width: 100%;
+                height: auto;
+                width: 160px;
+              }
+            }
+            &-in {
+              h2 {
+                font-size: 15px;
+                letter-spacing: 0.3px;
+                line-height: 1.5;
+              }
+            }
+          }
         }
       }
     }
@@ -101,4 +126,21 @@
 
 .hide_this {
   display: none;
+}
+
+
+// Animations
+@keyframes settingsToggle {
+	0% {
+    visibility: hidden;
+    // height: 0;
+		transform: translateY(-200px);
+    transition: all .44s ease-in-out;
+	}
+
+	100% {
+    // height: auto;
+    visibility: visible;
+		transform: translateY(0);
+	}
 }
